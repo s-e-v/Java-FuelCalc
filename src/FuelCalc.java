@@ -28,7 +28,7 @@ public class FuelCalc {
                 }
                 double efficiency = Double.parseDouble(milesVal.getText())/Double.parseDouble(vehichleVal.getText());
                 double total = Double.parseDouble(fuelPrice.getText())*efficiency;
-                totalCostVal.setText(currency + Double.toString(total));
+                totalCostVal.setText(currency + String.format("%.2f", total));
             }
         });
     }
@@ -39,6 +39,7 @@ public class FuelCalc {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(new FuelCalc().panel1);
         frame.setResizable(false);
+        frame.setIconImage(new javax.swing.ImageIcon("assets/mini-icon.png").getImage());
         frame.pack();
 
     }
